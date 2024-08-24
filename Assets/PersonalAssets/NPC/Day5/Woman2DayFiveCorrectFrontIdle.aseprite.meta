@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 231825187ba0649a2879efe3ff98d10c
+guid: a18b858779ee34c92ae14d4613a1743d
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -132,7 +132,7 @@ ScriptedImporter:
       y: 25
       width: 5
       height: 12
-    spriteID: 5e7d3d6df97e04c548a9643bc91c688a
+    spriteID: 2d5bc185127624179ba2932a7feb7c79
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -152,7 +152,7 @@ ScriptedImporter:
       y: 4
       width: 5
       height: 13
-    spriteID: 3017854a3544d4df683d848b1c00c7ca
+    spriteID: e94da9758bd4a4f88a16f8a8faf66f42
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -172,7 +172,7 @@ ScriptedImporter:
       y: 45
       width: 5
       height: 12
-    spriteID: 7ecd4c2436ad54480a1eabca4a95934f
+    spriteID: cbcceec0c669a4751ae993a8d2f1b9ea
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -197,7 +197,7 @@ ScriptedImporter:
         y: 1
         width: 5
         height: 12
-      spriteId: 5e7d3d6df97e04c548a9643bc91c688a
+      spriteId: 2d5bc185127624179ba2932a7feb7c79
     - name: Woman2DayFiveCorrectFrontIdle_Frame_1
       frameIndex: 1
       cellRect:
@@ -205,7 +205,7 @@ ScriptedImporter:
         y: 1
         width: 5
         height: 13
-      spriteId: 3017854a3544d4df683d848b1c00c7ca
+      spriteId: e94da9758bd4a4f88a16f8a8faf66f42
     - name: Woman2DayFiveCorrectFrontIdle_Frame_2
       frameIndex: 2
       cellRect:
@@ -213,7 +213,7 @@ ScriptedImporter:
         y: 1
         width: 5
         height: 12
-      spriteId: 7ecd4c2436ad54480a1eabca4a95934f
+      spriteId: cbcceec0c669a4751ae993a8d2f1b9ea
     linkedCells: []
     parentIndex: -1
   platformSettings: []

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6a7e818de3dc6424381a1d8e73cb01ee
+guid: c8e790e9a67cd48509905d8c73d22b56
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -132,7 +132,7 @@ ScriptedImporter:
       y: 25
       width: 4
       height: 12
-    spriteID: 865894d8579934116b7fc5b9cc045410
+    spriteID: 162d2d55aac244e7dbb25dcde8354c2e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -152,7 +152,7 @@ ScriptedImporter:
       y: 4
       width: 4
       height: 13
-    spriteID: 7a61cff33efe5477fa361fa9edd0432f
+    spriteID: 9e3c0317b26a54112a91b660c1bbd12e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -172,7 +172,7 @@ ScriptedImporter:
       y: 45
       width: 4
       height: 12
-    spriteID: e90b977df54db4fb29e6688e1460c107
+    spriteID: 08ed6088b89174eb9acd56a0c4d19bee
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -197,7 +197,7 @@ ScriptedImporter:
         y: 1
         width: 4
         height: 12
-      spriteId: 865894d8579934116b7fc5b9cc045410
+      spriteId: 162d2d55aac244e7dbb25dcde8354c2e
     - name: ManDayFiveIncorrectLeftIdle_Frame_1
       frameIndex: 1
       cellRect:
@@ -205,7 +205,7 @@ ScriptedImporter:
         y: 1
         width: 4
         height: 13
-      spriteId: 7a61cff33efe5477fa361fa9edd0432f
+      spriteId: 9e3c0317b26a54112a91b660c1bbd12e
     - name: ManDayFiveIncorrectLeftIdle_Frame_2
       frameIndex: 2
       cellRect:
@@ -213,7 +213,7 @@ ScriptedImporter:
         y: 1
         width: 4
         height: 12
-      spriteId: e90b977df54db4fb29e6688e1460c107
+      spriteId: 08ed6088b89174eb9acd56a0c4d19bee
     linkedCells: []
     parentIndex: -1
   platformSettings: []
