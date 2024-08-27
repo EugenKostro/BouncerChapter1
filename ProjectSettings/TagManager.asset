@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Club
+    uniqueID: 2804803277
+    locked: 0
+  - name: FrontOfClub
+    uniqueID: 586234289
+    locked: 0
+  - name: FrontOfPlayer
+    uniqueID: 496668293
+    locked: 0
