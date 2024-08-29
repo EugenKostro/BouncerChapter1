@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb4c3d678130c47baabf520faf31d724, type: 3}
+  m_Name: MafiaNPCDialog
+  m_EditorClassIdentifier: 
+  dialogLines:
+  - speaker: Boss
+    sentence: Toni, ya know why are you here and what you need to do!?
+  - speaker: Toni
+    sentence: Yeah i do
+  - speaker: Boss
+    sentence: "To make sure you don\u2019t mess up I\u2019ll go over the rules"
+  - speaker: Boss
+    sentence: You will check everyone IDs, they need to be over 18,
+  - speaker: Boss
+    sentence: date needs to start with a day number, ID number must contain 10 numbers,
+  - speaker: Boss
+    sentence: first goes last name and then the first name,
+  - speaker: Toni
+    sentence: Okay... Boss...
+  - speaker: Boss
+    sentence: "Go on, don\u2019t mess it up\u2026 "

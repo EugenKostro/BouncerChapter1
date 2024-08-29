@@ -8,17 +8,18 @@ public class MafiaNPCController : MonoBehaviour
     public Transform exitPoint;  
     public float speed = 2.0f;  
     public float stopDistance = 1.0f;  
-    public DialogManager dialogManager; // Dodaj ovo polje
-    public Dialog MafiaNPCDialog; // Ovaj već imaš
+    public Dialog dialog;
 
     private Animator animator;
     private bool hasExitedBuilding = false;
-    private float initialYPosition; // Spremit ćemo početnu Y poziciju NPC-a
+    private float initialYPosition; 
+    private bool dialogStarted = false;
+    private bool dialogFinished = false;
 
     void Start()
     {
         animator = GetComponent<Animator>();  
-        initialYPosition = transform.position.y; // Spremi početnu Y poziciju
+        initialYPosition = transform.position.y; 
     }
 
     void Update()
@@ -27,9 +28,13 @@ public class MafiaNPCController : MonoBehaviour
         {
             MoveToExitPoint();  
         }
-        else
+        else if (!dialogFinished)
         {
             MoveToPlayer();  
+        }
+        else
+        {
+            MoveToExitAfterDialog();
         }
     }
 
@@ -76,10 +81,42 @@ public class MafiaNPCController : MonoBehaviour
         {
             animator.SetBool("MafiaNPCLeftWalk", false);  
             animator.SetTrigger("MafiaNPCLeftIdle");  
-            player.GetComponent<PlayerController>().TurnRight(); 
 
-            // Započinjanje dijaloga
-            dialogManager.StartDialog(MafiaNPCDialog);
+            if (!dialogStarted)
+            {
+                dialogStarted = true;
+                player.GetComponent<PlayerController>().TurnRight(); 
+                FindObjectOfType<DialogManager>().StartDialog(dialog, this);  // Prosljeđuje se 'this' kao referenca na trenutni objekt
+            }
+        }
+    }
+
+    public void EndDialog()
+    {
+        dialogFinished = true;
+        animator.SetTrigger("MafiaNPCRightIdle");
+    }
+
+    void MoveToExitAfterDialog()
+    {
+        Vector2 currentPosition = new Vector2(transform.position.x, initialYPosition); 
+        Vector2 exitPosition = new Vector2(exitPoint.position.x, initialYPosition); 
+
+        float distanceToExit = Vector2.Distance(currentPosition, exitPosition);
+
+        if (distanceToExit > 0.1f)
+        {
+            transform.position = new Vector3(
+                Mathf.MoveTowards(transform.position.x, exitPoint.position.x, speed * Time.deltaTime),
+                initialYPosition, 
+                0); 
+
+            animator.SetBool("MafiaNPCRightWalk", true);
+        }
+        else
+        {
+            animator.SetBool("MafiaNPCRightWalk", false);  
+            gameObject.SetActive(false);
         }
     }
 }

@@ -1378,7 +1378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdd3ea4edf8cd4aba8624db17766495c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogText: {fileID: 0}
+  dialogText: {fileID: 1494908554}
 --- !u!1 &1593800143
 GameObject:
   m_ObjectHideFlags: 0
@@ -1705,8 +1705,7 @@ MonoBehaviour:
   exitPoint: {fileID: 1138135183}
   speed: 2
   stopDistance: 1
-  dialogManager: {fileID: 1542172277}
-  MafiaNPCDialog: {fileID: 11400000, guid: 35ce8550616bb4ce8b7c8e148d0db512, type: 2}
+  dialog: {fileID: 11400000, guid: 35ce8550616bb4ce8b7c8e148d0db512, type: 2}
 --- !u!212 &1750523142
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2005,6 +2004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dd8e245365724a0f8914deae955383c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerDialog: {fileID: 11400000, guid: efba38f24744c4377b94b3da47b064ab, type: 2}
 --- !u!1 &2064501216
 GameObject:
   m_ObjectHideFlags: 0

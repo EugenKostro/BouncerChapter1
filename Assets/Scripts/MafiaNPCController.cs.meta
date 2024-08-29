@@ -3,7 +3,10 @@ guid: 2a1f1b899b4f243f287b130941f68e53
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - player: {instanceID: 0}
+  - exitPoint: {instanceID: 0}
+  - dialog: {fileID: 11400000, guid: 35ce8550616bb4ce8b7c8e148d0db512, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
