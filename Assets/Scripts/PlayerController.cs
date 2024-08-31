@@ -5,17 +5,25 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Animator animator;
-    public Dialog playerDialog; 
 
     void Start()
     {
+        // Preuzmi Animator komponentu
         animator = GetComponent<Animator>();
     }
 
-    public void TurnRight()
-    {
-        transform.localScale = new Vector3(14, 11, 1); 
-        animator.SetTrigger("Player-right"); 
-        FindObjectOfType<DialogManager>().StartDialog(playerDialog, null);  // Pokreni dijalog za igrača, ali bez NPC-a
-    }
+   public void TurnLeft()
+{
+    animator.SetBool("isTurningLeft", true);
+    animator.SetBool("isTurningRight", false);
+}
+
+public void TurnRight()
+{
+    animator.SetBool("isTurningRight", true);
+    animator.SetBool("isTurningLeft", false);
+}
+
+
+
 }

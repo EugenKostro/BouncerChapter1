@@ -7,6 +7,7 @@ public class DialogManager : MonoBehaviour
 {
     public TextMeshProUGUI dialogText;  // Referenca na TextMeshProUGUI UI element
     private Queue<Dialog.DialogLine> dialogLines;
+    public Man2DayOneCorrectController man2NPC; // Referenca na Man2DayOneCorrectController
 
     void Start()
     {
@@ -21,6 +22,12 @@ public class DialogManager : MonoBehaviour
 
     public void StartDialog(Dialog dialog, MafiaNPCController npc)
     {
+        if (npc == null || !npc.gameObject.activeInHierarchy)
+        {
+            Debug.LogError("MafiaNPCController nije pronađen ili je deaktiviran!");
+            return;
+        }
+
         dialogLines.Clear();
 
         foreach (var line in dialog.dialogLines)
@@ -41,35 +48,39 @@ public class DialogManager : MonoBehaviour
 
         var dialogLine = dialogLines.Dequeue();
         dialogText.text = dialogLine.sentence;
-        Debug.Log($"Prikazujem rečenicu: {dialogLine.speaker}: {dialogLine.sentence}");
+        Debug.Log($"Displaying sentence: {dialogLine.speaker}: {dialogLine.sentence}");
     }
 
     public void EndDialog(MafiaNPCController npc)
     {
-        if (npc != null)
+        if (npc == null || !npc.gameObject.activeInHierarchy)
         {
-            Debug.Log("Kraj razgovora.");
-            npc.EndDialog();
+            Debug.LogError("MafiaNPCController nije pronađen ili je deaktiviran!");
+            return;
         }
-        else
+
+        npc.EndDialog();  // Završava dijalog za MafiaNPC
+
+        dialogText.gameObject.SetActive(false); // Sakrij dijalog
+
+        PlayerController playerController = FindObjectOfType<PlayerController>();
+        if (playerController != null)
         {
-            Debug.LogError("MafiaNPCController nije pronađen!");
+            playerController.TurnLeft();
+        }
+
+        if (man2NPC != null)
+        {
+            man2NPC.ActivateNPC();  // Aktivira kretanje drugog NPC-a
         }
     }
 
     void Update()
     {
+        MafiaNPCController npc = FindObjectOfType<MafiaNPCController>();
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            var npc = FindObjectOfType<MafiaNPCController>();
-            if (npc != null)
-            {
-                DisplayNextSentence(npc);
-            }
-            else
-            {
-                Debug.LogError("MafiaNPCController nije pronađen!");
-            }
+            DisplayNextSentence(npc);
         }
     }
 }
