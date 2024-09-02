@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Man2DayOneCorrectController : MonoBehaviour
+public class Man3DayOneCorrectController : MonoBehaviour
 {
     public Transform player;
     public Transform clubEntrance;
@@ -16,9 +16,6 @@ public class Man2DayOneCorrectController : MonoBehaviour
     private bool isMoving = false;
     private bool isReturning = false;
     private bool moveToClub = false;
-
-    public TextMeshProUGUI goodChoicesText;
-    public TextMeshProUGUI badChoicesText;
 
     void Start()
     {
@@ -62,20 +59,20 @@ public class Man2DayOneCorrectController : MonoBehaviour
             isMoving = false;
             animator.SetBool("isMovingToPlayer", false);
             animator.SetTrigger("hasReachedPlayer");
-            ShowMan2CorrectIdAndButtons();
+            ShowMan3CorrectIdAndButtons();
         }
     }
 
-    private void ShowMan2CorrectIdAndButtons()
+    private void ShowMan3CorrectIdAndButtons()
     {
-        GameObject man2CorrectId = GameObject.Find("Man2CorrectId");
-        GameObject allowButton = GameObject.Find("AllowEntranceButton");
-        GameObject banButton = GameObject.Find("BanButton");
+        GameObject man3CorrectId = GameObject.Find("Man3CorrectId");
+        GameObject allowButton = GameObject.Find("AllowEntranceButton3");
+        GameObject banButton = GameObject.Find("BanButton3");
 
-        if (man2CorrectId != null)
+        if (man3CorrectId != null)
         {
-            man2CorrectId.SetActive(true);
-            Animator idAnimator = man2CorrectId.GetComponent<Animator>();
+            man3CorrectId.SetActive(true);
+            Animator idAnimator = man3CorrectId.GetComponent<Animator>();
             if (idAnimator != null)
             {
                 idAnimator.SetTrigger("ShowId");
@@ -102,24 +99,26 @@ public class Man2DayOneCorrectController : MonoBehaviour
             }
         }
 
-        Debug.Log("NPC je stigao do playera, prikazujem ID i gumbe.");
+        Debug.Log("Man3 je stigao do playera, prikazujem ID i gumbe.");
     }
 
     public void OnAllowEntranceButtonPressed()
-{
-    HideMan2CorrectIdAndButtons();
-    moveToClub = true;
-    animator.SetBool("isMovingToPlayer", false);  // Deaktivira hodanje prema playeru
-    animator.SetTrigger("MoveToClub");  // Aktivira hodanje prema klubu
-    ChoiceManager.Instance.IncrementGoodChoices();  // Dodano za povećanje broja dobrih izbora
-
-    // Aktiviraj Man3 NPC nakon Man2 akcije
-    Man3DayOneCorrectController man3Controller = FindObjectOfType<Man3DayOneCorrectController>();
-    if (man3Controller != null)
     {
-        man3Controller.ActivateNPC();
+        HideMan3CorrectIdAndButtons();
+        moveToClub = true;
+        animator.SetBool("isMovingToPlayer", false);
+        animator.SetTrigger("MoveToClub");
+
+        // Dodaj bilježenje good choice
+        ChoiceManager.Instance.IncrementGoodChoices();
+
+        // Aktiviraj Man4 NPC nakon Man3 akcije
+        Man4DayOneCorrectController man4Controller = FindObjectOfType<Man4DayOneCorrectController>();
+        if (man4Controller != null)
+        {
+            man4Controller.ActivateNPC();
+        }
     }
-}
 
     private void MoveToClub()
     {
@@ -133,27 +132,28 @@ public class Man2DayOneCorrectController : MonoBehaviour
         else
         {
             moveToClub = false;
-            animator.SetBool("MoveToClub", false);  // Prelazi u idle stanje kada dođe do kluba
             animator.SetTrigger("hasReachedClub");
-            Debug.Log("NPC reached the club.");
+            Debug.Log("Man3 reached the club.");
             gameObject.SetActive(false);
         }
     }
 
     public void OnBanButtonPressed()
-{
-    HideMan2CorrectIdAndButtons();
-    isReturning = true;
-    animator.SetTrigger("TurnBack");
-    ChoiceManager.Instance.IncrementBadChoices();  // Dodano za povećanje broja loših izbora
-
-    // Aktiviraj Man3 NPC nakon Man2 akcije
-    Man3DayOneCorrectController man3Controller = FindObjectOfType<Man3DayOneCorrectController>();
-    if (man3Controller != null)
     {
-        man3Controller.ActivateNPC();
+        HideMan3CorrectIdAndButtons();
+        isReturning = true;
+        animator.SetTrigger("TurnBack");
+
+        // Dodaj bilježenje bad choice
+        ChoiceManager.Instance.IncrementBadChoices();
+
+        // Aktiviraj Man4 NPC nakon Man3 akcije
+        Man4DayOneCorrectController man4Controller = FindObjectOfType<Man4DayOneCorrectController>();
+        if (man4Controller != null)
+        {
+            man4Controller.ActivateNPC();
+        }
     }
-}
 
     private void MoveBackToStart()
     {
@@ -171,14 +171,14 @@ public class Man2DayOneCorrectController : MonoBehaviour
         }
     }
 
-    private void HideMan2CorrectIdAndButtons()
+    private void HideMan3CorrectIdAndButtons()
     {
-        GameObject man2CorrectId = GameObject.Find("Man2CorrectId");
-        GameObject allowButton = GameObject.Find("AllowEntranceButton");
-        GameObject banButton = GameObject.Find("BanButton");
+        GameObject man3CorrectId = GameObject.Find("Man3CorrectId");
+        GameObject allowButton = GameObject.Find("AllowEntranceButton3");
+        GameObject banButton = GameObject.Find("BanButton3");
 
-        if (man2CorrectId != null)
-            man2CorrectId.SetActive(false);
+        if (man3CorrectId != null)
+            man3CorrectId.SetActive(false);
 
         if (allowButton != null)
             allowButton.SetActive(false);
