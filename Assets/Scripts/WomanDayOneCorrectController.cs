@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Man4DayOneCorrectController : MonoBehaviour
+public class WomanDayOneCorrectController : MonoBehaviour
 {
     public Transform player;
     public Transform clubEntrance;
@@ -59,20 +59,20 @@ public class Man4DayOneCorrectController : MonoBehaviour
             isMoving = false;
             animator.SetBool("isMovingToPlayer", false);
             animator.SetTrigger("hasReachedPlayer");
-            ShowMan4CorrectIdAndButtons();
+            ShowWomanCorrectIdAndButtons();
         }
     }
 
-    private void ShowMan4CorrectIdAndButtons()
+    private void ShowWomanCorrectIdAndButtons()
     {
-        GameObject man4CorrectId = GameObject.Find("Man4CorrectId");
-        GameObject allowButton = GameObject.Find("AllowEntranceButton4");
-        GameObject banButton = GameObject.Find("BanButton4");
+        GameObject womanCorrectId = GameObject.Find("WomanCorrectId");
+        GameObject allowButton = GameObject.Find("AllowEntranceButtonWoman");
+        GameObject banButton = GameObject.Find("BanButtonWoman");
 
-        if (man4CorrectId != null)
+        if (womanCorrectId != null)
         {
-            man4CorrectId.SetActive(true);
-            Animator idAnimator = man4CorrectId.GetComponent<Animator>();
+            womanCorrectId.SetActive(true);
+            Animator idAnimator = womanCorrectId.GetComponent<Animator>();
             if (idAnimator != null)
             {
                 idAnimator.SetTrigger("ShowId");
@@ -99,26 +99,22 @@ public class Man4DayOneCorrectController : MonoBehaviour
             }
         }
 
-        Debug.Log("Man4 je stigao do playera, prikazujem ID i gumbe.");
+        Debug.Log("Woman je stigla do playera, prikazujem ID i gumbe.");
     }
 
     public void OnAllowEntranceButtonPressed()
-    {
-        HideMan4CorrectIdAndButtons();
-        moveToClub = true;
-        animator.SetBool("isMovingToPlayer", false);
-        animator.SetTrigger("MoveToClub");
+{
+    HideWomanCorrectIdAndButtons();
+    moveToClub = true;
+    animator.SetBool("isMovingToPlayer", false);
+    animator.SetTrigger("MoveToClub");
 
-        // Dodaj bilježenje good choice
-        ChoiceManager.Instance.IncrementGoodChoices();
+    // Bilježenje good choice
+    ChoiceManager.Instance.IncrementGoodChoices();
 
-        // Aktiviraj sljedeći NPC (ManDayOneCorrectController) nakon ove akcije
-        ManDayOneCorrectController nextController = FindObjectOfType<ManDayOneCorrectController>();
-        if (nextController != null)
-        {
-            nextController.ActivateNPC();
-        }
-    }
+    // Pokretanje završetka scene
+    SceneEndManager.Instance.TriggerEndScene();
+}
 
     private void MoveToClub()
     {
@@ -133,27 +129,23 @@ public class Man4DayOneCorrectController : MonoBehaviour
         {
             moveToClub = false;
             animator.SetTrigger("hasReachedClub");
-            Debug.Log("Man4 reached the club.");
+            Debug.Log("Woman reached the club.");
             gameObject.SetActive(false);
         }
     }
 
     public void OnBanButtonPressed()
-    {
-        HideMan4CorrectIdAndButtons();
-        isReturning = true;
-        animator.SetTrigger("TurnBack");
+{
+    HideWomanCorrectIdAndButtons();
+    isReturning = true;
+    animator.SetTrigger("TurnBack");
 
-        // Dodaj bilježenje bad choice
-        ChoiceManager.Instance.IncrementBadChoices();
+    // Bilježenje bad choice
+    ChoiceManager.Instance.IncrementBadChoices();
 
-        // Aktiviraj sljedeći NPC (ManDayOneCorrectController) nakon ove akcije
-        ManDayOneCorrectController nextController = FindObjectOfType<ManDayOneCorrectController>();
-        if (nextController != null)
-        {
-            nextController.ActivateNPC();
-        }
-    }
+    // Pokretanje završetka scene
+    SceneEndManager.Instance.TriggerEndScene();
+}
 
     private void MoveBackToStart()
     {
@@ -171,14 +163,14 @@ public class Man4DayOneCorrectController : MonoBehaviour
         }
     }
 
-    private void HideMan4CorrectIdAndButtons()
+    private void HideWomanCorrectIdAndButtons()
     {
-        GameObject man4CorrectId = GameObject.Find("Man4CorrectId");
-        GameObject allowButton = GameObject.Find("AllowEntranceButton4");
-        GameObject banButton = GameObject.Find("BanButton4");
+        GameObject womanCorrectId = GameObject.Find("WomanCorrectId");
+        GameObject allowButton = GameObject.Find("AllowEntranceButtonWoman");
+        GameObject banButton = GameObject.Find("BanButtonWoman");
 
-        if (man4CorrectId != null)
-            man4CorrectId.SetActive(false);
+        if (womanCorrectId != null)
+            womanCorrectId.SetActive(false);
 
         if (allowButton != null)
             allowButton.SetActive(false);

@@ -40,4 +40,14 @@ public class ChoiceManager : MonoBehaviour
         goodChoicesText.text = "Good choices: " + goodChoices;
         badChoicesText.text = "Bad choices: " + badChoices;
     }
+
+    public int GetGoodChoicesCount()
+    {
+        return goodChoices;
+    }
+
+    public int GetBadChoicesCount()
+    {
+        return badChoices;
+    }
 }
