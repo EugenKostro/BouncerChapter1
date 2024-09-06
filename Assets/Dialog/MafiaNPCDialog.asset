@@ -14,18 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogLines:
   - speaker: Boss
-    sentence: Toni, ya know why are you here and what you need to do!?
+    sentence: Hey... Toni!
   - speaker: Toni
-    sentence: Yeah i do
+    sentence: Yes Paulie
   - speaker: Boss
-    sentence: "To make sure you don\u2019t mess up I\u2019ll go over the rules"
+    sentence: You are owning a lot of money so lets make this quick
   - speaker: Boss
-    sentence: You will check everyone IDs, they need to be over 18,
+    sentence: Sure
   - speaker: Boss
-    sentence: date needs to start with a day number, ID number must contain 10 numbers,
+    sentence: You need to check everyone IDs
   - speaker: Boss
-    sentence: first goes last name and then the first name,
+    sentence: First goes surname, and then name
+  - speaker: Boss
+    sentence: Then you have to check date of birth
+  - speaker: Boss
+    sentence: Then you need to see if they are from USA State
+  - speaker: Boss
+    sentence: After that check for ID number, it contains only 10 numbers
+  - speaker: Boss
+    sentence: Under that is Country, which needs to be only USA
+  - speaker: Boss
+    sentence: Check for their sex and signature
   - speaker: Toni
-    sentence: Okay... Boss...
+    sentence: Got it Paulie
   - speaker: Boss
-    sentence: "Go on, don\u2019t mess it up\u2026 "
+    sentence: Shut up Toni and get to work...

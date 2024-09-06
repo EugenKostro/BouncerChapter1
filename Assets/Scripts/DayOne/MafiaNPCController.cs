@@ -94,7 +94,7 @@ public class MafiaNPCController : MonoBehaviour
     public void EndDialog()
     {
         dialogFinished = true;
-        animator.SetTrigger("MafiaNPCRightIdle");  // Početak idle animacije (ako je potrebno)
+        animator.SetTrigger("MafiaNPCRightIdle");  // Početak idle animacije (ako je potrebno)  
     }
 
     void MoveToExitAfterDialog()
