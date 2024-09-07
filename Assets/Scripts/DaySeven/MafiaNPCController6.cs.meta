@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 0a106c2880f34460693f10502019bf05
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - player: {instanceID: 0}
+  - exitPoint: {instanceID: 0}
+  - dialog: {fileID: 11400000, guid: 35ce8550616bb4ce8b7c8e148d0db512, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

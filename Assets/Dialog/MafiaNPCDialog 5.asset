@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb4c3d678130c47baabf520faf31d724, type: 3}
+  m_Name: MafiaNPCDialog 5
+  m_EditorClassIdentifier: 
+  dialogLines:
+  - speaker: Boss
+    sentence: Toni
+  - speaker: Toni
+    sentence: Yeah?
+  - speaker: Boss
+    sentence: You are starting to get on my nerves!
+  - speaker: Toni
+    sentence: Okey, so what?
+  - speaker: Boss
+    sentence: Boy you didn't just talk like that to me...
+  - speaker: Toni
+    sentence: Guess i just did...
+  - speaker: Boss
+    sentence: You are just lucky Boss started to like you
+  - speaker: Toni
+    sentence: Guess I am...
+  - speaker: Boss
+    sentence: I will come after you as soon as I get a chance!

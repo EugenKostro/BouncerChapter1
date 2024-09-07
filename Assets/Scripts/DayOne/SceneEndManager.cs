@@ -12,17 +12,18 @@ public class SceneEndManager : MonoBehaviour
     public GameObject nextDayButton;
 
     private void Awake()
+{
+    if (Instance == null)
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
+    else
+    {
+        Destroy(gameObject);  // Avoid duplicating SceneEndManager
+    }
+}
+
 
     private void OnEnable()
     {
@@ -135,14 +136,25 @@ public class SceneEndManager : MonoBehaviour
     }
 
     public void OnRestartButtonPressed()
-    {
-        fadePanel.SetActive(false);  // Osiguraj da se FadePanel deaktivira
-        SceneManager.LoadScene("Scene1");
-    }
+{
+    fadePanel.SetActive(false);  // Deaktiviraj FadePanel
+
+    // Dohvati trenutni index scene
+    int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+    // Učitaj ponovno trenutnu scenu
+    SceneManager.LoadScene(currentSceneIndex);
+}
+
 
     public void OnNextDayButtonPressed()
-    {
-        fadePanel.SetActive(false);  // Osiguraj da se FadePanel deaktivira
-        SceneManager.LoadScene("Scene2");
-    }
+{
+    fadePanel.SetActive(false);  // Deactivate the FadePanel
+
+    // Get the current active scene's build index
+    int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+    // Load the next scene by incrementing the index
+    SceneManager.LoadScene(currentSceneIndex + 1);
+}
 }
