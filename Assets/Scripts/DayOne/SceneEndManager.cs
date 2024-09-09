@@ -24,7 +24,6 @@ public class SceneEndManager : MonoBehaviour
     }
 }
 
-
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -157,4 +156,10 @@ public class SceneEndManager : MonoBehaviour
     // Load the next scene by incrementing the index
     SceneManager.LoadScene(currentSceneIndex + 1);
 }
+public void GoToMainMenu()
+{
+    Debug.Log("Go to Main Menu called");
+    SceneManager.LoadScene("MainMenu");
+}
+
 }
