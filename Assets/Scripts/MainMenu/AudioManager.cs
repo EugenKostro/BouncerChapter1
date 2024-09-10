@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public AudioSource audioSource;  // Referenca na AudioSource
+    public AudioSource audioSource;  
 
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);  // Sprječava uništavanje između scena
+        DontDestroyOnLoad(gameObject);  
     }
 
     public void SetVolume(float volume)
     {
-        audioSource.volume = volume;  // Postavljanje glasnoće
+        audioSource.volume = volume;
     }
 }

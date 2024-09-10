@@ -86,7 +86,7 @@ public class MafiaNPCController : MonoBehaviour
             {
                 dialogStarted = true;
                 player.GetComponent<PlayerController>().TurnRight(); 
-                FindObjectOfType<DialogManager>().StartDialog(dialog, this);  // Početak dijaloga s referencom na NPC
+                FindObjectOfType<DialogManager>().StartDialog(dialog, this); 
             }
         }
     }
@@ -94,7 +94,7 @@ public class MafiaNPCController : MonoBehaviour
     public void EndDialog()
     {
         dialogFinished = true;
-        animator.SetTrigger("MafiaNPCRightIdle");  // Početak idle animacije (ako je potrebno)  
+        animator.SetTrigger("MafiaNPCRightIdle");  
     }
 
     void MoveToExitAfterDialog()
@@ -111,12 +111,12 @@ public class MafiaNPCController : MonoBehaviour
                 initialYPosition, 
                 0); 
 
-            animator.SetBool("MafiaNPCRightWalk", true);  // Pokrećemo animaciju hoda u desno
+            animator.SetBool("MafiaNPCRightWalk", true);  
         }
         else
         {
             animator.SetBool("MafiaNPCRightWalk", false);  
-            gameObject.SetActive(false);  // Sakrivamo NPC ili ga uništavamo
+            gameObject.SetActive(false);
         }
     }
 }

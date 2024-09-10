@@ -109,10 +109,8 @@ public class WomanDayOneCorrectController : MonoBehaviour
     animator.SetBool("isMovingToPlayer", false);
     animator.SetTrigger("MoveToClub");
 
-    // Bilježenje good choice
     ChoiceManager.Instance.IncrementGoodChoices();
 
-    // Pokretanje završetka scene
     SceneEndManager.Instance.TriggerEndScene();
 }
 
@@ -140,10 +138,8 @@ public class WomanDayOneCorrectController : MonoBehaviour
     isReturning = true;
     animator.SetTrigger("TurnBack");
 
-    // Bilježenje bad choice
     ChoiceManager.Instance.IncrementBadChoices();
 
-    // Pokretanje završetka scene
     SceneEndManager.Instance.TriggerEndScene();
 }
 

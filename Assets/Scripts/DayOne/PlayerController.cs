@@ -8,22 +8,18 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        // Preuzmi Animator komponentu
         animator = GetComponent<Animator>();
     }
 
-   public void TurnLeft()
-{
-    animator.SetBool("isTurningLeft", true);
-    animator.SetBool("isTurningRight", false);
-}
+    public void TurnLeft()
+    {
+        animator.SetBool("isTurningLeft", true);
+        animator.SetBool("isTurningRight", false);
+    }
 
-public void TurnRight()
-{
-    animator.SetBool("isTurningRight", true);
-    animator.SetBool("isTurningLeft", false);
-}
-
-
-
+    public void TurnRight()
+    {
+        animator.SetBool("isTurningRight", true);
+        animator.SetBool("isTurningLeft", false);
+    }
 }

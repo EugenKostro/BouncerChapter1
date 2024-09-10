@@ -109,10 +109,8 @@ public class Woman2DayOneCorrectController : MonoBehaviour
         animator.SetBool("isMovingToPlayer", false);
         animator.SetTrigger("MoveToClub");
 
-        // Bilježenje good choice jer AllowEntranceButtonWoman2 je dobar izbor
         ChoiceManager.Instance.IncrementGoodChoices();
 
-        // Aktiviraj sljedeći NPC (WomanDayOneCorrectController) nakon ove akcije
         WomanDayOneCorrectController nextController = FindObjectOfType<WomanDayOneCorrectController>();
         if (nextController != null)
         {
@@ -144,10 +142,8 @@ public class Woman2DayOneCorrectController : MonoBehaviour
         isReturning = true;
         animator.SetTrigger("TurnBack");
 
-        // Bilježenje bad choice jer BanButtonWoman2 je loš izbor
         ChoiceManager.Instance.IncrementBadChoices();
 
-        // Aktiviraj sljedeći NPC (WomanDayOneCorrectController) nakon ove akcije
         WomanDayOneCorrectController nextController = FindObjectOfType<WomanDayOneCorrectController>();
         if (nextController != null)
         {

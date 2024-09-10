@@ -109,10 +109,8 @@ public class Woman2DayOneCorrectController4 : MonoBehaviour
         animator.SetBool("isMovingToPlayer", false);
         animator.SetTrigger("MoveToClub");
 
-        // Record good choice because AllowEntranceButtonWoman2 is a good choice
         ChoiceManager.Instance.IncrementBadChoices();
 
-        // Trigger the next NPC (WomanDayOneCorrectController1) after this action
         WomanDayOneCorrectController4 nextController = FindObjectOfType<WomanDayOneCorrectController4>();
         if (nextController != null)
         {
@@ -144,10 +142,8 @@ public class Woman2DayOneCorrectController4 : MonoBehaviour
         isReturning = true;
         animator.SetTrigger("TurnBack");
 
-        // Record bad choice because BanButtonWoman2 is a bad choice
         ChoiceManager.Instance.IncrementGoodChoices();
 
-        // Trigger the next NPC (WomanDayOneCorrectController1) after this action
         WomanDayOneCorrectController4 nextController = FindObjectOfType<WomanDayOneCorrectController4>();
         if (nextController != null)
         {

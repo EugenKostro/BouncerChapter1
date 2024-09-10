@@ -109,11 +109,10 @@ public class Man2DayOneCorrectController5 : MonoBehaviour
 {
     HideMan2CorrectIdAndButtons();
     moveToClub = true;
-    animator.SetBool("isMovingToPlayer", false);  // Deaktivira hodanje prema playeru
-    animator.SetTrigger("MoveToClub");  // Aktivira hodanje prema klubu
-    ChoiceManager.Instance.IncrementBadChoices();  // Dodano za povećanje broja dobrih izbora
+    animator.SetBool("isMovingToPlayer", false);  
+    animator.SetTrigger("MoveToClub");  
+    ChoiceManager.Instance.IncrementBadChoices();  
 
-    // Aktiviraj Man3 NPC nakon Man2 akcije
     Man3DayOneCorrectController5 man3Controller = FindObjectOfType<Man3DayOneCorrectController5>();
     if (man3Controller != null)
     {
@@ -133,7 +132,7 @@ public class Man2DayOneCorrectController5 : MonoBehaviour
         else
         {
             moveToClub = false;
-            animator.SetBool("MoveToClub", false);  // Prelazi u idle stanje kada dođe do kluba
+            animator.SetBool("MoveToClub", false);  
             animator.SetTrigger("hasReachedClub");
             Debug.Log("NPC reached the club.");
             gameObject.SetActive(false);
@@ -145,9 +144,8 @@ public class Man2DayOneCorrectController5 : MonoBehaviour
     HideMan2CorrectIdAndButtons();
     isReturning = true;
     animator.SetTrigger("TurnBack");
-    ChoiceManager.Instance.IncrementGoodChoices();  // Dodano za povećanje broja loših izbora
+    ChoiceManager.Instance.IncrementGoodChoices();  
 
-    // Aktiviraj Man3 NPC nakon Man2 akcije
     Man3DayOneCorrectController5 man3Controller = FindObjectOfType<Man3DayOneCorrectController5>();
     if (man3Controller != null)
     {

@@ -7,16 +7,16 @@ public class MainMenu : MonoBehaviour
 {
     public void OnPlayButtonPressed()
     {
-        SceneManager.LoadScene("Scene1"); // zamijeni "Scene1" s pravim imenom tvoje prve scene
+        SceneManager.LoadScene("Scene1"); 
     }
 
     public void OnQuitButtonPressed()
     {
-        Application.Quit(); // izlaz iz igre
+        Application.Quit(); 
     }
     public void GoToMainMenu()
     {
         Debug.Log("Going to Main Menu");
-        SceneManager.LoadScene("MainMenu"); // Promijeni na ime scene glavnog izbornika
+        SceneManager.LoadScene("MainMenu"); 
     }
 }

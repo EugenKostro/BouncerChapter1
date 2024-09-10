@@ -6,6 +6,6 @@ public class BrightnessManager : MonoBehaviour
 {
     public void SetBrightness(float brightness)
     {
-        RenderSettings.ambientLight = Color.white * brightness;  // Postavi svjetlinu
+        RenderSettings.ambientLight = Color.white * brightness;  
     }
 }

@@ -20,7 +20,7 @@ public class SceneEndManager : MonoBehaviour
     }
     else
     {
-        Destroy(gameObject);  // Avoid duplicating SceneEndManager
+        Destroy(gameObject);  
     }
 }
 
@@ -47,15 +47,13 @@ public class SceneEndManager : MonoBehaviour
 
     private void Start()
     {
-        // Osiguraj da su svi relevantni objekti ispravno inicijalizirani
-        fadePanel.SetActive(false);  // Deaktiviraj FadePanel na početku
+        fadePanel.SetActive(false);  
         if (restartButton != null) restartButton.SetActive(false);
         if (nextDayButton != null) nextDayButton.SetActive(false);
     }
 
    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
 {
-    // Ponovno postavljanje referenci
     fadePanel = GameObject.Find("FadePanel");
     resultText = GameObject.Find("ResultText").GetComponent<TMPro.TextMeshProUGUI>();
     outcomeText = GameObject.Find("OutcomeText").GetComponent<TMPro.TextMeshProUGUI>();
@@ -86,7 +84,7 @@ public class SceneEndManager : MonoBehaviour
     {
         if (fadePanel != null)
         {
-            fadePanel.SetActive(true);  // Aktiviraj FadePanel kada završava scena
+            fadePanel.SetActive(true);  
             ShowResults();
         }
         else
@@ -121,12 +119,12 @@ public class SceneEndManager : MonoBehaviour
                 outcomeText.text = "You have disappeared";
                 if (nextDayButton != null)
                 {
-                    nextDayButton.SetActive(false);  // Sakrij gumb Next Day ako je ishod loš
+                    nextDayButton.SetActive(false);  
                 }
             }
 
             if (restartButton != null) restartButton.SetActive(true);
-            if (nextDayButton != null) nextDayButton.SetActive(badChoices < 7);  // Prikaži gumb Next Day samo ako je ishod pozitivan
+            if (nextDayButton != null) nextDayButton.SetActive(badChoices < 7);  
         }
         else
         {
@@ -136,24 +134,20 @@ public class SceneEndManager : MonoBehaviour
 
     public void OnRestartButtonPressed()
 {
-    fadePanel.SetActive(false);  // Deaktiviraj FadePanel
+    fadePanel.SetActive(false);  
 
-    // Dohvati trenutni index scene
     int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-    // Učitaj ponovno trenutnu scenu
     SceneManager.LoadScene(currentSceneIndex);
 }
 
 
     public void OnNextDayButtonPressed()
 {
-    fadePanel.SetActive(false);  // Deactivate the FadePanel
+    fadePanel.SetActive(false);  
 
-    // Get the current active scene's build index
     int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-    // Load the next scene by incrementing the index
     SceneManager.LoadScene(currentSceneIndex + 1);
 }
 public void GoToMainMenu()

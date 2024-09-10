@@ -9,10 +9,10 @@ public class Dialog : ScriptableObject
     [System.Serializable]
     public struct DialogLine
     {
-        public string speaker;  // Tko govori, npr. "Player" ili "MafiaNPC"
+        public string speaker;  
         [TextArea(3, 10)]
-        public string sentence;  // Što govore
+        public string sentence; 
     }
 
-    public DialogLine[] dialogLines;  // Ovdje pohranjujemo sve linije dijaloga
+    public DialogLine[] dialogLines;  
 }

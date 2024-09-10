@@ -109,10 +109,8 @@ public class ManDayOneCorrectController5 : MonoBehaviour
         animator.SetBool("isMovingToPlayer", false);
         animator.SetTrigger("MoveToClub");
 
-        // Bilježenje good choice
         ChoiceManager.Instance.IncrementGoodChoices();
 
-        // Aktiviraj sljedeći NPC (ManDayOneIncorrectController1) nakon ove akcije
         ManDayOneIncorrectController5 nextController = FindObjectOfType<ManDayOneIncorrectController5>();
         if (nextController != null)
         {
@@ -144,10 +142,8 @@ public class ManDayOneCorrectController5 : MonoBehaviour
         isReturning = true;
         animator.SetTrigger("TurnBack");
 
-        // Bilježenje bad choice
         ChoiceManager.Instance.IncrementBadChoices();
 
-        // Aktiviraj sljedeći NPC (ManDayOneIncorrectController1) nakon ove akcije
         ManDayOneIncorrectController5 nextController = FindObjectOfType<ManDayOneIncorrectController5>();
         if (nextController != null)
         {

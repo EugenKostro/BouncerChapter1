@@ -5,9 +5,9 @@ using TMPro;
 
 public class DialogManager6 : MonoBehaviour
 {
-    public TextMeshProUGUI dialogText;  // Referenca na TextMeshProUGUI UI element
+    public TextMeshProUGUI dialogText;  
     private Queue<Dialog.DialogLine> dialogLines;
-    public Man2DayOneCorrectController6 man2NPC; // Referenca na Man2DayOneCorrectController
+    public Man2DayOneCorrectController6 man2NPC; 
 
     void Start()
     {
@@ -59,9 +59,9 @@ public class DialogManager6 : MonoBehaviour
             return;
         }
 
-        npc.EndDialog();  // Završava dijalog za MafiaNPC
+        npc.EndDialog(); 
 
-        dialogText.gameObject.SetActive(false); // Sakrij dijalog
+        dialogText.gameObject.SetActive(false); 
 
         PlayerController playerController = FindObjectOfType<PlayerController>();
         if (playerController != null)
@@ -71,7 +71,7 @@ public class DialogManager6 : MonoBehaviour
 
         if (man2NPC != null)
         {
-            man2NPC.ActivateNPC();  // Aktivira kretanje drugog NPC-a
+            man2NPC.ActivateNPC();  
         }
     }
 
